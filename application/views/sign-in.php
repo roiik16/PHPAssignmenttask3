@@ -4,21 +4,25 @@
         <div id="colorleft">
             <div class="image4app"></div>
             <h1>Sign in</h1>
-            <form id="signinform" action="login.php" method="post">
+            <div id = "signinform">
 
-                <input type="text" name="username" id="emailadd" placeholder="Username or E-mail" required>
 
-                <input type="Password" name="password" id="password" placeholder="Password" required>
+            <?=form_open ('users/do_signin'); ?>
 
-    <?php if ($_SERVER['REQUEST_METHOD'] === "POST" and $login === FALSE): ?>
-                        <span id="testtext">*Wrong username or password! </span>
-    <?php endif;?>
-                <div id="forgotcreate">
-                    <a href="google.co.uk">Forgot password /</a>
-                    <a href="register.php">Create new account</a>
+
+              <div id="emailadd">
+                <?=form_input ($form['email']); ?>
+              </div>
+
+                <div id="password">
+                  <?=form_input ($form['password']); ?>
                 </div>
-                <button type="submit" id="sign-in">Sign-in</button>
-            </form>
+
+
+                  <?=form_submit (null, 'Login');?>
+
+                  <?=form_close (); ?>
+              </div>
         </div>
         <div id="colorright">
             <span>OR</span>
