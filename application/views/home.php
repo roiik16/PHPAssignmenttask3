@@ -16,15 +16,15 @@
 <!-- Below the header code -->
 <div id="eventsimages">
     <div class="image">
-        <img src="images/hero_workstations.jpg">
+        <img src="<?=base_url('images/hero_workstations.jpg')?>">
         <span>Assignments</span>
     </div>
     <div class="image">
-        <img src="images/hero_hallway.jpg">
+        <img src="<?=base_url('images/hero_hallway.jpg')?>">
         <span>Meeting sessions</span>
     </div>
     <div class="image">
-        <img src="images/hero_play.jpg">
+        <img src="<?=base_url('images/hero_play.jpg')?>">
         <span>Free time</span>
     </div>
 </div>

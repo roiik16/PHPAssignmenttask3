@@ -133,55 +133,59 @@ class Users extends CI_Controller {
 			# The login process
 			public function do_signin ()
 			{
-			# load the form validator
-			$this->load->library ('form_validation');
+				# load the form validator
+				$this->load->library ('form_validation');
 
-			# set the form rules
-			$rules = array (
-				array (
-					'field'	=> 'input-email',
-					'label' => 'Email',
-					'rules' => 'required|valid_email'
-				),
-				array (
-					'field'	=> 'input-password',
-					'label' => 'Password',
-					'rules' => 'required'
-				)
-			);
+				# set the form rules
+				$rules = array (
+					array (
+						'field'	=> 'input-email',
+						'label' => 'Email',
+						'rules' => 'required|valid_email'
+					),
+					array (
+						'field'	=> 'input-password',
+						'label' => 'Password',
+						'rules' => 'required'
+					)
+				);
 
-			# set the rules in the library
-			$this->form_validation->set_rules ($rules);
+				# set the rules in the library
+				$this->form_validation->set_rules ($rules);
 
-			# check for validation errors on the page, if there are any, stop here
-			if ($this->form_validation->run () === FALSE) {
-				echo validation_errors ();
-				return;
-			}
+				# check for validation errors on the page, if there are any, stop here
+				if ($this->form_validation->run () === FALSE) {
+					echo validation_errors ();
+					return;
+				}
 
-			$email 		= $this->input->post ('input-email');
-			$password 	= $this->input->post ('input-password');
+				$email 		= $this->input->post ('input-email');
+				$password 	= $this->input->post ('input-password');
 
-			# Set the result of this query in a variable
-			$login_id = $this->users_model->email_id ($email);
+				# Set the result of this query in a variable
+				$login_id = $this->users_model->email_id ($email);
 
-			# If the email doesn't exist, stop here
-			if (!$login_id) {
-				echo "The email does not exist.";
-				return;
-			}
+				# If the email doesn't exist, stop here
+				if (!$login_id)
+				{
+					echo "The email does not exist.";
+					return;
+				}
 
-			# The email is OK, so now we should check the password
-			if (!$this->users_model->check_password ($login_id, $password)) {
-				echo "The password is incorrect";
-				return;
-			}
+				# The email is OK, so now we should check the password
+				if (!$this->users_model->check_password ($login_id, $password))
+				{
+					echo "The password is incorrect";
+					return;
+				}
 
-			# Get the user information and set it in a session
-			$userdata = $this->users_model->get_userdata ($login_id);
+				# Get the user information and set it in a session
+				$userdata = $this->users_model->get_userdata ($login_id);
 
-			# We set the userdata, however we need to set an encryption key
-			$this->session->set_userdata ($userdata);
+				# We set the userdata, however we need to set an encryption key
+				$this->session->set_userdata ($userdata);
+
+				redirect ("home");
 
 			}
 }

@@ -35,12 +35,12 @@
                 <!-- COMMENT 1 -->
                 <div class="post">
                     <a href="index.php">
-                        <img class="user-image" src="images/user-image.png" alt="logo">
+                        <img class="user-image" src="<?=base_url('images/user-image.png')?>"alt="logo">
                     </a>
                     <div id="user-comment1">
                         <span id="username">Ludwig Buttigieg </span>
                         <span id="timeago">20 minutes ago</span>
-                        <span id="usercomment">Today's lecture has been cancelled. Sorry and meet you next time!</span>
+                        <span id="usercomment">Today's lecture has been cancelled. Sorry and see you next lesson!</span>
                         <i class="fa fa-heart-o likesystem" aria-hidden="true">
                         3 people likes this
                         </i>
@@ -62,7 +62,7 @@
             <div id="pinnedcommentsuserimage">
                 <div class="post">
                     <a href="index.php">
-                        <img class="user-image" src="images/user-image.png" alt="logo">
+                        <img class="user-image" src="<?=base_url('images/user-image.png')?>" alt="logo">
                     </a>
                 </div>
                 <div id="pinnedcomments">
