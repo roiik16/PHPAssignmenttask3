@@ -5,11 +5,7 @@
             <div class="image4app"></div>
             <h1>Sign in</h1>
             <div id = "signinform">
-
-
               <?=form_open ('users/do_signin'); ?>
-
-
                 <div id="emailadd">
                   <?=form_input ($form['email']); ?>
                 </div>

@@ -21,10 +21,8 @@
         <input type="text" name="title" />
         <br>
         </div>
-
         <textarea rows="10" cols="50" name="content"></textarea>
         <br>
-
         <button class="buttonsave" type="submit">Save</button>
 <!-- <?php if ($note != NULL): ?>
         <input type="hidden" name="note_id" value="<?=$note_id?>">

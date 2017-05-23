@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Notes extends SC_Controller {
+class Contact extends SC_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -21,7 +21,7 @@ class Notes extends SC_Controller {
 
 	public function index()
 	{
-    $this->build('notes');
+    $this->build('contact');
 	}
 
 }

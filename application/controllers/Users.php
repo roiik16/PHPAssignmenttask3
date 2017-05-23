@@ -186,6 +186,17 @@ class Users extends CI_Controller {
 				$this->session->set_userdata ($userdata);
 
 				redirect ("home");
+			}
 
+			public function logout()
+			{
+				$user_data = $this->session->get_userdata();
+
+				foreach ($user_data as $key => $value)
+				{
+					$this->session->unset_userdata($key);
+				}
+
+				redirect('login');
 			}
 }

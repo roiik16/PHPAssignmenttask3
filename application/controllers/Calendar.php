@@ -21,7 +21,7 @@ class Notes extends SC_Controller {
 
 	public function index()
 	{
-    $this->build('notes');
+    $this->build('calendar');
 	}
 
 }

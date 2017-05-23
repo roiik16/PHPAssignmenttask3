@@ -33,13 +33,14 @@ class SC_Controller extends CI_Controller {
     protected function check_login () {
 
     #if the user is logged in
-		if ($this->session->userdata ('user_id') != NULL) {
-
+		if ($this->session->userdata ('user_id') != NULL)
+    {
             # if the user is on the login/register pages
-            if ($this->router->fetch_class () == 'users') {
-
+            if ($this->router->class == 'users')
+            {
                 # only redirect if the user is not on the logout page
-                if ($this->router->fetch_method () != 'logout') {
+                if ($this->router->method != 'logout')
+                {
                     redirect ("home");
                 }
             }
@@ -48,8 +49,9 @@ class SC_Controller extends CI_Controller {
     else
     {
             # if the user is not on the login/register pages
-            if ($this->router->fetch_class () != 'users') {
-                redirect ("users/signin");
+            if ($this->router->class != 'users')
+            {
+                redirect ("logout");
             }
         }
     }

@@ -18,13 +18,11 @@
         <?php // TODO: Get the user data and display it here, WHO IS LOGGED IN?? ?>
 
 
-
-
         <a id="profileimage" href="profile.php">
             <img src="<?=base_url('images/googleplusprofilephoto.png')?>">
 
         </a>
-        <a id="signout" href="logout">
+        <a id="signout" href="<?=site_url('logout')?>">
             <i class="fa fa-sign-out" aria-hidden="true"></i>
         </a>
         </div>
