@@ -18,7 +18,7 @@ class Home extends SC_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
-	public function index()
+	 public function index()
 	{
 			if ($this->session->userdata ("user_id") !=NULL)
 			{

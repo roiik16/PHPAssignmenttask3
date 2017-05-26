@@ -24,4 +24,30 @@ class Notes extends SC_Controller {
     $this->build('notes');
 	}
 
+	public function Savenote()
+	{
+		$this->load->helper('file');
+
+		$data = 'Some file data';
+
+		if ( ! write_file('css/Text', $data))
+		{
+		        echo 'Unable to write the file';
+		}
+		else
+		{
+		        echo 'File written!';
+		}
+	}
+
+	public function Readanote()
+	{
+		$string = read_file('css/Text');
+	}
+
+	public function Deletenote()
+	{
+		delete_files('css/Text', TRUE);
+	}
+
 }

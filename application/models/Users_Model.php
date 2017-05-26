@@ -17,7 +17,6 @@ class Users_Model extends CI_Model {
         $id = $this->db->insert_id ();
 
         return ($id > 0) ? $id : FALSE;
-
     }
 
 
@@ -78,7 +77,6 @@ class Users_Model extends CI_Model {
 
         # Give the controller all the data as an array
         return $result->row_array ();
-
     }
 
 }
