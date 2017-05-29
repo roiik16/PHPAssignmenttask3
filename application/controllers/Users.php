@@ -106,6 +106,7 @@ class Users extends SC_Controller {
 		{
 			# first: load the form helper
 				$this->load->helper ('form');
+
 				$data = array (
 					'form'		=> array (
 						'email'			=> array (
@@ -122,6 +123,7 @@ class Users extends SC_Controller {
 						)
 					)
 				);
+				
 				# load the login page
 				$this->load->view('struct/header');
 				$this->load->view ('sign-in', $data);

@@ -19,35 +19,83 @@ class Notes extends SC_Controller {
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
 
+	 function __construct () {
+
+		 # Inherit the parent class' properties
+		 parent::__construct ();
+
+		 $this->load->model ('save_model');
+	 }
+
 	public function index()
 	{
-    $this->build('notes');
+    $this->add_notes ();
 	}
 
-	public function Savenote()
+	public function add_notes()
 	{
-		$this->load->helper('file');
+		$this->load->helper('form');
 
-		$data = 'Some file data';
+		$data = array (
+			'notes' => $this->save_model->get_notes(),
+			'form' => array (
+				'n_title' => array(
+					'type' => 'text',
+					'name' => 'input-notetitle',
+					'placeholder' => 'Write your title here',
+					'required' => TRUE
+				),
 
-		if ( ! write_file('css/Text', $data))
+				'n_content' 	=> array (
+					'type'			=> 'text',
+					'name'			=> 'input-content',
+					'placeholder'	=> 'Write your text here',
+					'required'		=> TRUE
+				)
+			)
+		);
+
+		$this->build ('notes', $data);
+	}
+
+	public function do_add_notes()
+    {
+        $this->load->library ('form_validation');
+
+        $rules = array (
+            array(
+                'field' => 'input-title',
+				'label' => 'Note title',
+				'rules' => 'required'
+            ),
+			array(
+                'field' => 'input-title',
+				'label' => 'Note title',
+				'rules' => 'required'
+            )
+        );
+
+        $this->form_validation->set_rules ($rules);
+
+		if ($this->form_validation->run () === FALSE)
 		{
-		        echo 'Unable to write the file';
+			echo validation_errors();
+			return;
+		}
+
+		$n_title = $this->input->post ('input-notetitle');
+		$n_content = $this->input->post('input-content');
+
+		if ($this->notes_model->add_notes ($n_title, $n_content))
+		{
+			echo "Note saved";
 		}
 		else
 		{
-		        echo 'File written!';
+			echo "Note was not saved";
 		}
-	}
 
-	public function Readanote()
-	{
-		$string = read_file('css/Text');
-	}
+    }
 
-	public function Deletenote()
-	{
-		delete_files('css/Text', TRUE);
-	}
 
 }

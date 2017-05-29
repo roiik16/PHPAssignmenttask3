@@ -15,21 +15,19 @@
     <!-- note taking area -->
 <div id="notes-bottomcontainer">
 
-    <form action="notes.php" method="post">
+<?=form_open ('notes/do_add_note'); ?>
         <div id="titleoptions">
+
+
             <label>Title : </label>
-        <input type="text" name="title" />
+
+            <?=form_input ($form['n_title']); ?>
         <br>
         </div>
 
-        
-        <textarea rows="10" cols="50" name="content"></textarea>
+        <?=form_input ($form['n_content']); ?>
+        <!-- <textarea  rows="10" cols="50" name="content"> </textarea> -->
         <br>
-        <button class="buttonsave" type="submit">Save</button>
-
-
-
-
-    </form>
+        <?=form_submit (null, 'Submit');?>
     </div>
     </div>

@@ -2,10 +2,10 @@
   <nav>
       <ul>
           <li>
-              <a href="Home" <?php if ($this->router->fetch_class () == 'Home') echo ' class="active"' ?>> <i id="homeicon" class="fa fa-home fa-3x" style="color:white" aria-hidden="true"></i></a>
+              <a href="Home" <?php if ($this->router->fetch_class () == 'Home') echo ' class="active"'?>> <i id="homeicon" class="fa fa-home fa-3x" style="color:white" aria-hidden="true"></i></a>
           </li>
           <li>
-              <a href="newsfeed" <?php if ($this->router->fetch_class () == 'Newsfeed') echo ' class="active"' ?>> <i id="newspapericon" class="fa fa-newspaper-o fa-3x" style="color:white"  aria-hidden="true"></i></a>
+              <a href="newsfeed" <?php if ($this->router->fetch_class () == 'Newsfeed') echo ' class="active"'?>> <i id="newspapericon" class="fa fa-newspaper-o fa-3x" style="color:white"  aria-hidden="true"></i></a>
           </li>
           <li>
                <a href="notes" <?php if ($this->router->fetch_class () == 'Notes') echo ' class="active"' ?>> <i id="newfile" class="fa fa-file-text fa-3x" style="color:white" aria-hidden="true"></i></a>

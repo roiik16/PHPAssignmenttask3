@@ -91,6 +91,6 @@ class Users_Model extends CI_Model {
         $this->db->where('user_id', $id)
                 ->update('tbl_users', $update);
 
-        return ($this->db->affected_rows() == 1)
+        return ($this->db->affected_rows() == 1);
     }
 }
