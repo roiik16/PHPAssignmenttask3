@@ -33,11 +33,11 @@
 
                     <div id="user-comment1">
                       <br><br><br><br>
-
                         <?php foreach($comments as $post) : ?>
                           <h3><?php echo $post['c_title']; ?></h3>
-                          <small class="post-date"> Posted on: <?php echo $post['c_date']; ?></small>
+                          <small class="post-date"> Posted on: <?=date('d M Y,H:i', $post['c_date']);?></small>
                           <br />
+
                           <?php echo $post['c_content']; ?>
                           <br><br><br>
                         <?php endforeach; ?>

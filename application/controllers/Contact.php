@@ -21,7 +21,7 @@ class Contact extends SC_Controller {
 
 	public function index()
 	{
-    $this->build('contact');
+    	$this->build('Contact');
 	}
 
 }

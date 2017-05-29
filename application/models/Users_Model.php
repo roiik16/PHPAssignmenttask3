@@ -65,7 +65,7 @@ class Users_Model extends CI_Model {
     public function get_userdata ($id) {
 
         # Set the query
-        $this->db->select ('user_id, user_name')
+        $this->db->select ('user_id, user_name, user_surname, user_email, user_phone')
             ->where ('user_id', $id);
 
         # Put the results in a variable
@@ -79,4 +79,18 @@ class Users_Model extends CI_Model {
         return $result->row_array ();
     }
 
+    function update_users($id, $name = NULL, $surname = NULL, $email = NULL, $phone = NULL)
+    {
+        $update = array();
+
+        if ($name != NULL ) $update['user_name'] = $name;
+        if ($surname != NULL ) $update['user_surname'] = $surname;
+        if ($email != NULL) $update['user_email'] = $email;
+        if ($phone != NULL) $update['user_phone'] = $phone;
+
+        $this->db->where('user_id', $id)
+                ->update('tbl_users', $update);
+
+        return ($this->db->affected_rows() == 1)
+    }
 }

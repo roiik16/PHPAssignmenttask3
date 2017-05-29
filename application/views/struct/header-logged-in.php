@@ -15,11 +15,10 @@
         <div class="flex-space"></div>
         <!-- PROFILE IMAGE AND NAME -->
 
-        <?php // TODO: Get the user data and display it here, WHO IS LOGGED IN?? ?>
 
         <h3><?=$userdata['user_name']; ?></h3>
 
-        <a id="profileimage" href="profile.php">
+        <a id="profileimage" href="profile">
             <img src="<?=base_url('images/googleplusprofilephoto.png')?>">
 
         </a>

@@ -17,14 +17,13 @@
       return $query->row_array();
     }
 
-
     public function add_posts($body)
     {
 
       $data = array
       (
         'c_content' => $body,
-        'c_date'    => time (),
+        'c_date'    => time(),
         'tbl_users_user_ID' => $this->session->userdata('user_id')
       );
 
@@ -33,4 +32,4 @@
       return $this->db->insert_id ();
     }
 
-    }
+}
