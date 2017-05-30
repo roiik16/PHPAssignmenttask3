@@ -3,26 +3,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Notes extends SC_Controller {
 
-
-	 function __construct () {
-
+	 function __construct ()
+	 {
 		 # Inherit the parent class' properties
 		 parent::__construct ();
 
-		 $this->load->model ('save_model');
+		 $this->load->model ('Notes_model');
 	 }
 
 	public function index()
 	{
-    $this->add_notes ();
+    	$this->add_notes ();
 	}
 
 	public function add_notes()
 	{
-		$this->load->helper('form');
-
 		$data = array (
-			'notes' => $this->save_model->get_notes(),
 			'form' => array (
 				'n_title' => array(
 					'type' => 'text',
@@ -49,17 +45,16 @@ class Notes extends SC_Controller {
 
         $rules = array (
             array(
-                'field' => 'input-title',
+                'field' => 'input-notetitle',
 				'label' => 'Note title',
 				'rules' => 'required'
             ),
 			array(
-                'field' => 'input-title',
+                'field' => 'input-content',
 				'label' => 'Note title',
 				'rules' => 'required'
             )
         );
-
         $this->form_validation->set_rules ($rules);
 
 		if ($this->form_validation->run () === FALSE)
@@ -71,7 +66,9 @@ class Notes extends SC_Controller {
 		$n_title = $this->input->post ('input-notetitle');
 		$n_content = $this->input->post('input-content');
 
-		if ($this->notes_model->add_notes ($n_title, $n_content))
+
+
+		if ($this->Notes_model->add_notes ($n_title, $n_content))
 		{
 			echo "Note saved";
 		}

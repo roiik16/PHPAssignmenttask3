@@ -1,17 +1,12 @@
 <?php
-  class Save_model extends CI_Model{
+  class Notes_model extends CI_Model{
 
     public function __construct()
     {
       $this->load->database();
     }
 
-    public function get_notes()
-    {
-        $query = $this->db->get('tbl_notes');
-        return $query->result_array();
 
-    }
 
     public function add_notes($notetitle, $notecontent)
     {
@@ -27,5 +22,13 @@
       $this->db->insert ('tbl_notes', $data);
 
       return $this->db->insert_id ();
+    }
+
+
+    public function get_notes()
+    {
+        $query = $this->db->get('tbl_notes');
+        return $query->result_array();
+
     }
 }

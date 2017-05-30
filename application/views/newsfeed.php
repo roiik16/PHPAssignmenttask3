@@ -35,7 +35,7 @@
                           <h3><?php echo $post['c_title']; ?></h3>
 
 
-                      </h3> Posted by <?php echo $post['user_email']; ?></h3>
+                        </h3> Posted by <?php echo $post['user_email']; ?></h3>
 
 
                           <small class="post-date"> Posted on: <?=date('d M Y,H:i', $post['c_date']);?></small>
@@ -44,13 +44,6 @@
                           <?php echo $post['c_content']; ?>
                           <br><br><br>
                         <?php endforeach; ?>
-
-
-
-
-
-
-
                     </div>
                 </div>
             </div>

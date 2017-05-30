@@ -15,7 +15,7 @@
     <!-- note taking area -->
 <div id="notes-bottomcontainer">
 
-<?=form_open ('notes/do_add_note'); ?>
+<?=form_open ('notes/do_add_notes'); ?>
         <div id="titleoptions">
 
 
