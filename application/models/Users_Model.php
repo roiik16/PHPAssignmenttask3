@@ -88,6 +88,8 @@ class Users_Model extends CI_Model {
         if ($email != NULL) $update['user_email'] = $email;
         if ($phone != NULL) $update['user_phone'] = $phone;
 
+        if (count($update) == 0) return TRUE;
+
         $this->db->where('user_id', $id)
                 ->update('tbl_users', $update);
 

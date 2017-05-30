@@ -5,16 +5,15 @@
       $this->load->database();
     }
 
-    public function get_posts($slug = false)
+    public function get_posts()
     {
-      if ($slug == FALSE)
-      {
-        $query = $this->db->get('tbl_comments');
-        return $query->result_array();
-      }
+        $query = $this->db
+            ->select ('tbl_comments.*, tbl_users.user_email')
+            ->join ('tbl_users', 'tbl_users.User_ID = tbl_comments.tbl_users_user_ID', 'left')
+            ->get('tbl_comments');
 
-      $query = $this->db->get_where('tbl_comments', array('slug' => $slug));
-      return $query->row_array();
+        return $query->result_array();
+
     }
 
     public function add_posts($body)

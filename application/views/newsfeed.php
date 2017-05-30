@@ -29,14 +29,17 @@
                         <img class="user-image" src="<?=base_url('images/user-image.png')?>"alt="logo">
                     </a> -->
 
-
-
                     <div id="user-comment1">
                       <br><br><br><br>
                         <?php foreach($comments as $post) : ?>
                           <h3><?php echo $post['c_title']; ?></h3>
+
+
+                      </h3> Posted by <?php echo $post['user_email']; ?></h3>
+
+
                           <small class="post-date"> Posted on: <?=date('d M Y,H:i', $post['c_date']);?></small>
-                          <br />
+                          <br/>
 
                           <?php echo $post['c_content']; ?>
                           <br><br><br>

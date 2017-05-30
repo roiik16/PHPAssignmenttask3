@@ -1,3 +1,5 @@
+<? var_dump ($form); ?>
+
 <div id="profilepic-bar">
      <img src="images/googleplusprofilephoto.png">
 </div>
@@ -7,10 +9,11 @@
     <!-- Request the data of the current user -->
 
      <?=form_open ('profile/update_users'); ?>
-
         <h3><?=$userdata['user_name']; ?></h3>
+
             <img src="<?=base_url('images/Files-Edit-File-icon.png')?>" width = "20px" height = "20px" >
             <?=form_input ($form['email']); ?>
+            
             <?=form_submit (null, 'Change');?>
 
 
