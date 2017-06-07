@@ -3,13 +3,24 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Calendar extends SC_Controller {
 
-	 public function index ($year = null, $month = null)
-	 {
-		 $this->load->model('Mycal_model');
+	function index($year = null, $month = null) {
 
-		 $data['calendar'] = $this->Mycal_model->generate($year, $month);
+        if (!$year) {
+            $year = date ('Y');
+        }
+        if (!$month) {
+            $month = date ('m');
+        }
+        $this->load->model('mycal_model');
 
-		 $this->load->view('calendar', $data);
-	 }
+        if ($day = $this->input->post('day')) {
+            $this->mycal_model->add_calendar_data(
+                "$year-$month-$day",
+                $this->input->post('data')
+            );
+        }
+        $data['calendar'] = $this->mycal_model->generate($year, $month);
 
+        $this->load->view('calendar', $data);
+    }
 }

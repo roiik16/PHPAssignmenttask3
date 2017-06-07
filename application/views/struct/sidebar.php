@@ -14,7 +14,7 @@
                 <a  href="Calendar" <?php if ($this->router->fetch_class () == 'Calendar') echo ' class="active"' ?>> <i id="calendaricon" class="fa fa-calendar fa-3x" style="color:white" aria-hidden="true"></i></a>
           </li>
           <li>
-              <a href="contact" <?php if ($this->router->fetch_class () == 'Contact') echo ' class="active"' ?>> <i id="envelopeicon" class="fa fa-envelope fa-3x " style="color:white" aria-hidden="true"></i></a>
+              <a href="<?=site_url('Contact')?>" <?php if ($this->router->fetch_class () == 'Contact') echo ' class="active"' ?>> <i id="envelopeicon" class="fa fa-envelope fa-3x " style="color:white" aria-hidden="true"></i></a>
           </li>
       </ul>
   </nav>

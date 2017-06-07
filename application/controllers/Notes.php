@@ -8,7 +8,7 @@ class Notes extends SC_Controller {
 		 # Inherit the parent class' properties
 		 parent::__construct ();
 
-		 $this->load->model ('Notes_model');
+		 $this->load->model ('notes_model');
 	 }
 
 	public function index()
@@ -18,7 +18,9 @@ class Notes extends SC_Controller {
 
 	public function add_notes()
 	{
+
 		$data = array (
+			'notes' => $this->notes_model->get_notes ($this->session->userdata('user_id')),
 			'form' => array (
 				'n_title' => array(
 					'type' => 'text',
@@ -68,7 +70,7 @@ class Notes extends SC_Controller {
 
 
 
-		if ($this->Notes_model->add_notes ($n_title, $n_content))
+		if ($this->notes_model->add_notes ($n_title, $n_content))
 		{
 			echo "Note saved";
 		}
@@ -76,8 +78,9 @@ class Notes extends SC_Controller {
 		{
 			echo "Note was not saved";
 		}
-
     }
 
-
+	public function view_note($id) {
+		echo $id;
+	}
 }

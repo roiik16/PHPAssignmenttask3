@@ -7,7 +7,6 @@
     }
 
 
-
     public function add_notes($notetitle, $notecontent)
     {
 
@@ -22,13 +21,22 @@
       $this->db->insert ('tbl_notes', $data);
 
       return $this->db->insert_id ();
+
     }
 
 
-    public function get_notes()
+    # get the note information and load according to the user
+    public function get_notes($id)
     {
-        $query = $this->db->get('tbl_notes');
-        return $query->result_array();
+        $this->db->select ('notes_id, note_title, note_content, note_date')
+            ->where ('tbl_users_user_ID', $id);
 
+        $result = $this->db->get ('tbl_notes');
+
+        if ($result->num_rows() == 0)
+            return false;
+
+        return $result;
     }
+
 }

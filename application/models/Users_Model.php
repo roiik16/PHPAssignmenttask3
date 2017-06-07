@@ -61,6 +61,30 @@ class Users_Model extends CI_Model {
 
     }
 
+    #This is done to get all the users registered EXCLUDING the one logged in.
+    public function get_all_users ($exclude = NULL) {
+
+        $this->db->select('user_ID, user_name');
+
+        if ($exclude != NULL) {
+            $this->db->where('user_id !=', $exclude);
+        }
+
+        return $this->db->get('tbl_users');
+    }
+
+
+    public function get_all_users_dropdown ($exclude = NULL) {
+
+        $users = $this->get_all_users($exclude);
+
+        $dropdown = array ();
+        foreach ($users->result_array() as $user)
+            $dropdown[$user['user_ID']] = $user['user_name'];
+
+            return $dropdown;
+    }
+
     # Retrieve the user's data
     public function get_userdata ($id) {
 
@@ -95,4 +119,5 @@ class Users_Model extends CI_Model {
 
         return ($this->db->affected_rows() == 1);
     }
+
 }

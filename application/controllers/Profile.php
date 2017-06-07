@@ -23,7 +23,6 @@ class Profile extends SC_Controller {
 		);
 		# load the registration page
 		$this->build('profile', $data);
-
 	}
 
 	public function update_users()

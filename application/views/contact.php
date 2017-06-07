@@ -4,11 +4,16 @@
         </div>
         <div id="sendto">
             <p>Send to</p>
-                <select>
-                  <option value="phpuser">phpuser</option>
-                </select>
+                <?=form_dropdown('input-recipient', $userlist); ?>
         </div>
         <div id="contact-text-box">
+
+            <?=form_open('contact/do_add_messages'); ?>
+            <?=form_input ($form['content']); ?>
+                    <!-- <textarea  rows="10" cols="50" name="content"> </textarea> -->
+                    <br>
+            <?=form_submit (null, 'Send');?>
+            <?=form_close (); ?>
             <textarea placeholder="Write your message here..."></textarea>
             <button id="sendmessage">Send</button>
         </div>
@@ -18,7 +23,13 @@
         </div>
     <h1>Messages</h1>
     <div id="message">
-        <span>Hello this is a message test</span>
+        <?php foreach($messages->result_array() as $post) : ?>
+          <h3><?php echo $post['msg_content']; ?></h3>
+        <br/>
+          <br><br><br>
+        <?php endforeach; ?>
+
+
     </div>
         <i class="fa fa-reply" aria-hidden="true"></i>
         <i class="fa fa-trash" aria-hidden="true"></i>
