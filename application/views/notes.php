@@ -12,7 +12,7 @@
 
 
     <?php foreach ($notes->result_array () as $note): ?>
-        <a href="<?=site_url("notes/view_note/{$note['notes_id']}")?>"><?=$note['note_title']?></a>
+        <a href="<?=site_url("notes/view_note/{$note['note_content']}")?>"><?=$note['note_title']?></a>
     <?php endforeach; ?>
 
 </aside>
@@ -22,15 +22,22 @@
 <div id="notes-bottomcontainer">
 
 <?=form_open ('notes/do_add_notes'); ?>
+
         <div id="titleoptions">
             <label>Title : </label>
             <?=form_input ($form['n_title']); ?>
         <br>
         </div>
-        <?=form_input ($form['n_content']); ?>
+
+        <div id="content">
+            <?=form_input ($form['n_content']); ?>
+        </div>
+
         <!-- <textarea  rows="10" cols="50" name="content"> </textarea> -->
         <br>
-        <?=form_submit (null, 'Submit');?>
+        <div id ="btnsave">
+            <?=form_submit (null, 'Submit');?>
+        </div>
         <?=form_close (); ?>
     </div>
     </div>

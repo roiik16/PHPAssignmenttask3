@@ -19,6 +19,18 @@ class Users extends SC_Controller {
 	 					'placeholder'	=> 'Name',
 	 					'required'		=> TRUE
 	 				),
+					'full_surname'		=> array (
+	 					'type'			=> 'text',
+	 					'name'			=> 'input-full-surname',
+	 					'placeholder'	=> 'Surname',
+	 					'required'		=> TRUE
+	 				),
+					'username'		=> array (
+	 					'type'			=> 'text',
+	 					'name'			=> 'input-username',
+	 					'placeholder'	=> 'Username',
+	 					'required'		=> TRUE
+	 				),
 	 				'email'			=> array (
 	 					'type'			=> 'email',
 	 					'name'			=> 'input-email',
@@ -52,15 +64,25 @@ class Users extends SC_Controller {
  				'label' => 'Full Name',
  				'rules' => 'required|alpha'
  			),
+			array (
+ 				'field'	=> 'input-full-surname',
+ 				'label' => 'Surname',
+ 				'rules' => 'required|alpha'
+ 			),
+			array (
+ 				'field'	=> 'input-username',
+ 				'label' => 'Username',
+ 				'rules' => 'required|alpha'
+ 			),
+			array (
+ 				'field'	=> 'input-password',
+ 				'label' => 'Password',
+ 				'rules' => 'required|min_length[8]|max_length[20]'
+ 			),
  			array (
  				'field'	=> 'input-email',
  				'label' => 'Email',
  				'rules' => 'required|valid_email'
- 			),
- 			array (
- 				'field'	=> 'input-password',
- 				'label' => 'Password',
- 				'rules' => 'required|min_length[8]|max_length[20]'
  			)
  		);
 
@@ -74,11 +96,13 @@ class Users extends SC_Controller {
  		}
 
  		$name 	= $this->input->post ('input-full-name');
- 		$email 		= $this->input->post ('input-email');
+		$surname = $this->input->post ('input-full-surname');
+ 		$username = $this->input->post ('input-username');
  		$password 	= $this->input->post ('input-password');
+ 		$email 		= $this->input->post ('input-email');
 
- 		if ($this->users_model->register ($name, $email, $password)) {
- 			echo "The user was registered.";
+ 		if ($this->users_model->register ($name,$surname,$username,$password,$email)) {
+ 			redirect('users/signin');
  		} else {
  			echo "The user could not be registered.";
  		}

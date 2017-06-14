@@ -35,6 +35,11 @@
       padding-left: 10px;
       color: black;
       background-color: transparent; }
+    #top-menu h3
+    {
+        padding-top: 6px;
+        padding-right: 10px;
+    }
   #top-menu #profileimage {
     display: flex;
     text-decoration: none;
@@ -242,9 +247,11 @@
   margin-top: 5em;
   margin-left: 80px;
   margin-right: 10px; }
+ #allbody #askaquestionarea{
+    padding-left: 20px;
+}
   #allbody #askaquestionarea p {
     font-size: 2em;
-    padding-left: 90px;
     padding-top: 20px; }
 
 #questionform {
@@ -276,45 +283,17 @@
 #comments-page {
   display: flex; }
   #comments-page #commentsarea {
-    width: 50%; }
+    width: 70%; }
 
-.post {
-  display: flex; }
-  .post .user-image {
-    height: 60px;
-    margin-left: 1em;
-    margin-top: 1em; }
-  .post #user-comment1 #username {
-    margin-top: 20px;
-    padding-left: 10px;
-    width: 25%; }
-  .post #user-comment1 #timeago {
-    font-size: 10px;
-    text-align: left;
-    width: 150px;
-    padding-left: 10px; }
-  .post #user-comment1 #usercomment {
-    font-size: 12px;
-    border-style: groove;
-    width: 75%;
+#user-comment1{
+    margin-left: 20px;
+  }
+#user-comment1 #postsection{
+    border-style: solid;
+    border-width: medium;
     padding: 5px;
-    margin-left: 10px;
-    margin-top: 10px; }
-  .post #user-comment1 .likesystem {
-    padding-left: 20px;
-    margin-top: 10px;
-    float: left; }
-  .post #user-comment1 #postmessage {
-    margin-left: 200px;
-    margin-top: 10px; }
-    .post #user-comment1 #postmessage #input-question {
-      width: 300px;
-      float: left;
-      padding: 5px; }
-    .post #user-comment1 #postmessage button {
-      background: transparent;
-      border: 0;
-      padding: 5px; }
+    background-color:#b3e0ff;
+}
 
 #verticalline {
   border-right: solid #808080;
@@ -609,32 +588,18 @@
     text-align: center;
     width: 1.75em; }
   #notes-takingpage #notes-bottomcontainer {
-    margin-left: 150px; }
+    margin-left: 250px; }
     #notes-takingpage #notes-bottomcontainer #titleoptions {
       display: flex;
-      margin-left: 80px; }
+      margin-left: 20px; }
       #notes-takingpage #notes-bottomcontainer #titleoptions label {
         padding-right: 10px; }
-      #notes-takingpage #notes-bottomcontainer #titleoptions #input-title {
-        width: 30%; }
-    #notes-takingpage #notes-bottomcontainer textarea {
-      margin-top: 50px;
-      resize: none; }
-    #notes-takingpage #notes-bottomcontainer #buttons {
-      display: flex;
-      margin-right: 150px;
-      float: right;
-      margin-top: 15px;
-      height: 30px; }
-      #notes-takingpage #notes-bottomcontainer #buttons .buttonsave {
-        color: white;
-        background-color: black;
-        border: 0;
-        opacity: 0.7;
-        width: 100px; }
-        #notes-takingpage #notes-bottomcontainer #buttons .buttonsave:hover {
-          opacity: 1; }
-
+      #notes-takingpage #notes-bottomcontainer #content{
+        padding-left: 70px;
+        padding-top: 20px; }
+      #notes-takingpage #notes-bottomcontainer #btnsave{
+        margin-left: 500px;
+      }
 @media only screen and (max-width: 800px) {
   #notes-takingpage {
     margin-left: 80px;

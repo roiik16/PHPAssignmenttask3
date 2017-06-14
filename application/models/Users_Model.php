@@ -4,12 +4,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Users_Model extends CI_Model {
 
     # Register the user
-    public function register ($full_name, $email, $password) {
+    public function register ($full_name, $full_surname, $username, $password, $email) {
 
         $data = array (
             'user_name'    => $full_name,
-            'user_email'        => $email,
-            'user_password'     => password_hash ($password, CRYPT_BLOWFISH)
+            'user_surname'    => $full_surname,
+            'user_username'    => $username,
+            'user_password'     => password_hash ($password, CRYPT_BLOWFISH),
+            'user_email'        => $email
         );
 
         $this->db->insert ('tbl_users', $data);
@@ -89,7 +91,7 @@ class Users_Model extends CI_Model {
     public function get_userdata ($id) {
 
         # Set the query
-        $this->db->select ('user_id, user_name, user_surname, user_email, user_phone')
+        $this->db->select ('user_id, user_name, user_surname, user_email')
             ->where ('user_id', $id);
 
         # Put the results in a variable
@@ -110,7 +112,6 @@ class Users_Model extends CI_Model {
         if ($name != NULL ) $update['user_name'] = $name;
         if ($surname != NULL ) $update['user_surname'] = $surname;
         if ($email != NULL) $update['user_email'] = $email;
-        if ($phone != NULL) $update['user_phone'] = $phone;
 
         if (count($update) == 0) return TRUE;
 

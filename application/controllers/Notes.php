@@ -33,7 +33,8 @@ class Notes extends SC_Controller {
 					'type'			=> 'text',
 					'name'			=> 'input-content',
 					'placeholder'	=> 'Write your text here',
-					'required'		=> TRUE
+					'required'		=> TRUE,
+					'style'			=> 'width: 500px; height: 30px;'
 				)
 			)
 		);

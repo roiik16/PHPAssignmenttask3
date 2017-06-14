@@ -49,9 +49,7 @@ class Newsfeed extends SC_Controller {
 				)
 			)
 		);
-
 		$this->build ('newsfeed', $data);
-
 	}
 
 

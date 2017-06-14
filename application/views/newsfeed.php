@@ -32,17 +32,15 @@
                     <div id="user-comment1">
                       <br><br><br><br>
                         <?php foreach($comments as $post) : ?>
-                          <h3><?php echo $post['c_title']; ?></h3>
-
-
+                            <div id="postsection">
                         </h3> Posted by <?php echo $post['user_email']; ?></h3>
-
-
                           <small class="post-date"> Posted on: <?=date('d M Y,H:i', $post['c_date']);?></small>
                           <br/>
-
                           <?php echo $post['c_content']; ?>
                           <br><br><br>
+
+                          </div>
+                           <br>
                         <?php endforeach; ?>
                     </div>
                 </div>
