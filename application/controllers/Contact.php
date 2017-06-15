@@ -73,6 +73,9 @@ class Contact extends SC_Controller {
 		$content = $this->input->post ('input-messagecontent');
 		$recipient = $this->input->post ('input-recipient');
 
+		var_dump($recipient);
+		die;
+
 		if ($this->messages_model->add_messages($content))
 		{
 			echo "Message sent";

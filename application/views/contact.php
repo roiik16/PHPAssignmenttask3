@@ -23,8 +23,10 @@
         </div>
     <h1>Messages</h1>
     <div id="message">
+
         <?php foreach($messages->result_array() as $post) : ?>
-          <h3><?php echo $post['msg_content']; ?></h3>
+          <h3><?php echo $post['msg_content'];?></h3>
+
         <br/>
           <br><br><br>
         <?php endforeach; ?>

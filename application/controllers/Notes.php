@@ -73,7 +73,7 @@ class Notes extends SC_Controller {
 
 		if ($this->notes_model->add_notes ($n_title, $n_content))
 		{
-			echo "Note saved";
+			redirect('notes');
 		}
 		else
 		{

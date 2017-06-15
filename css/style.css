@@ -807,10 +807,9 @@
             text-align: center; }
         #signinpage #sign-inmain #colorleft #signinform #sign-in {
           color: white;
-          background-color: black;
-          width: 15em;
+          width: 20em;
           margin-top: 20px;
-          margin-left: 25%; }
+          margin-left: 50%; }
         #signinpage #sign-inmain #colorleft #signinform #signinwith {
           display: none;
           width: 75%; }
