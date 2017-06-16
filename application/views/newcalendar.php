@@ -1,8 +1,5 @@
 <head>
-
     <style>
-
-
     .calendar {
           font-family: Arial; font-size: 12px;
       }

@@ -24,7 +24,7 @@
 
                 }
                 return $cal_data;
-                
+
         }
 
         function add_calendar_data($date, $data) {

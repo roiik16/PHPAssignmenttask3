@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Newcalendar extends CI_Controller {
+class Newcalendar extends SC_Controller {
 
     function index($year = null, $month = null) {
 
@@ -24,7 +24,6 @@ class Newcalendar extends CI_Controller {
         $data['calendar'] = $this->Newcalendar_Model->generate($year, $month);
 
         $this->load->view('newcalendar', $data);
-
-
+        //$this->build('newcalendar', $data);
     }
 }

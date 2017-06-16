@@ -33,8 +33,10 @@
 
         $result = $this->db->get ('tbl_notes');
 
-        if ($result->num_rows() == 0)
-            return false;
+        //This bi** below will not allow the notes page to load when it fails to find a note
+        
+        //if ($result->num_rows() == 0)
+        //    return false;
 
         return $result;
     }

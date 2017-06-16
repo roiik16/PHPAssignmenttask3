@@ -11,7 +11,7 @@ class Users_Model extends CI_Model {
             'user_surname'    => $full_surname,
             'user_username'    => $username,
             'user_password'     => password_hash ($password, CRYPT_BLOWFISH),
-            'user_email'        => $email
+            'user_email'        => $email        
         );
 
         $this->db->insert ('tbl_users', $data);

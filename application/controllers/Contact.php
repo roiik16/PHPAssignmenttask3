@@ -35,7 +35,9 @@ class Contact extends SC_Controller {
      public function add_messages()
      {
          $data = array(
-			 'userlist' => $this->users_model->get_all_users_dropdown($this->session->userdata('user_id')),
+			 //this will display all the users in a dropdown menu
+		 	'userlist' => $this->users_model->get_all_users_dropdown($this->session->userdata('user_id')),
+
              'form' => array(
                  'content' => array(
                      'type' => 'text',
@@ -48,6 +50,8 @@ class Contact extends SC_Controller {
          );
 
          $this->build ('contact' ,$data);
+
+
      }
 
 	 public function do_add_messages()
@@ -60,6 +64,7 @@ class Contact extends SC_Controller {
  				'label' => 'Message content',
  				'rules' => 'required'
             )
+
         );
 
         $this->form_validation->set_rules ($rules);
@@ -71,10 +76,7 @@ class Contact extends SC_Controller {
 		}
 
 		$content = $this->input->post ('input-messagecontent');
-		$recipient = $this->input->post ('input-recipient');
 
-		var_dump($recipient);
-		die;
 
 		if ($this->messages_model->add_messages($content))
 		{
@@ -100,5 +102,11 @@ class Contact extends SC_Controller {
 
 
 		 $this->build ('contact' ,$data);
+	 }
+
+
+	 public function view_messages($id)
+	 {
+		 echo $id;
 	 }
 }

@@ -11,13 +11,18 @@ class Profile extends SC_Controller {
 					'type'			=> 'text',
 					'name'			=> 'input-full-name',
 					'placeholder'	=> 'Name',
-					'required'		=> TRUE
+					'required'		=> FALSE
 				),
 				'email'			=> array (
 					'type'			=> 'email',
 					'name'			=> 'input-email',
-					'placeholder'	=> 'me@example.com',
-					'required'		=> TRUE
+					'placeholder'	=> 'me@example.com'
+				),
+				'surname'			=> array (
+					'type'			=> 'text',
+					'name'			=> 'input-surname',
+					'placeholder'	=> 'surname'
+
 				)
 			)
 		);
@@ -34,7 +39,7 @@ class Profile extends SC_Controller {
 		$name = $this->input->post ('user_name');
 		if ($name == '') $name = NULL;
 
-		$surname = $this->input->post ('user_surname');
+		$surname = $this->input->post ('input-surname');
 		if ($name == '') $name = NULL;
 
 		$email = $this->input->post ('input-email');
@@ -44,5 +49,4 @@ class Profile extends SC_Controller {
 
 		redirect('profile');
 	}
-
 }

@@ -5,7 +5,6 @@ class Users extends SC_Controller {
 
 	 # The registration form
 	 	public function register () {
-
 			$this->load->view ('struct/header');
 	 		# first: load the form helper
 	 		$this->load->helper ('form');
@@ -42,7 +41,12 @@ class Users extends SC_Controller {
 	 					'name'			=> 'input-password',
 	 					'placeholder'	=> 'password',
 	 					'required'		=> TRUE
-	 				)
+	 				),
+					'profilepicture' => array (
+						'type'  	=> 'image',
+						'name'		=> 'input-image',
+						'required'  => TRUE
+						)
 	 			)
 	 		);
 
@@ -56,6 +60,7 @@ class Users extends SC_Controller {
 
  		# load the form validator
  		$this->load->library ('form_validation');
+		$this->load->library('upload');
 
  		# set the form rules
  		$rules = array (

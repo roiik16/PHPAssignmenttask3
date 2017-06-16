@@ -1,28 +1,36 @@
-<script>
-    function myFunction()
-    {
-        document.getElementById("demo").innerHTML = "YOU CLICKED ME!";
-    }
-</script>
+<? var_dump ($form); ?>
 
 <div id="profilepic-bar">
-     <img src="images/googleplusprofilephoto.png">
+     <img src="<?=base_url('images/googleplusprofilephoto.png') ?>">
 </div>
 
 <div id="left-sectioninfo">
-    <h1>Basic Information</h1>
+    <h1>User Information</h1>
     <!-- Request the data of the current user -->
 
-     <?=form_open ('profile/update_users'); ?>
+
         <h3><?=$userdata['user_name']; ?></h3>
-
-
-
         <h3><?=$userdata['user_surname']; ?></h3>
         <h3><?=$userdata['user_email']; ?></h3>
 
+
+
+<?=form_open ('profile/update_users'); ?>
+    <!-- <img src="<?=base_url('images/Files-Edit-File-icon.png')?>" width = "20px" height = "20px" > -->
+
+
+    <br><br><br><br>
+    <h3> You can change your personal details down below</h3>
+    <br>
+    <h5>Change your email to : </h5> <?=form_input ($form['email']); ?>
+    <br>
+    <h5>Change your surname to : </h5> <?=form_input ($form['surname']); ?>
+
+<br><br>
+
+    <?=form_submit (null, 'Commit account changes');?>
+
+
         <?=form_close (); ?>
-
-<p id="demo" onclick="myFunction()">    <img src="<?=base_url('images/Files-Edit-File-icon.png')?>" width = "20px" height = "20px"></p>
-
+<br><br><br><br><br><br><br><br><br><br><br><br>
 </div>

@@ -6,14 +6,14 @@ class Messages_model extends CI_Model
       $this->load->database();
     }
 
-    public function add_messages($content, $recepient)
+    public function add_messages($content)
     {
         $data = array
         (
             'msg_content' => $content,
             # 'msg_date'  => time(),
-            'msg_senderID' => $this->session->userdata('user_id'),
-            'msg_recepientID' => $recepient
+            'msg_senderID' => $this->session->userdata('user_id')
+            //'msg_recepientID' => $getusers
         );
 
         $this->db->insert ('tbl_messages', $data);
@@ -24,7 +24,7 @@ class Messages_model extends CI_Model
     public function get_messages ($id) {
 
         $this->db->select ('msg_content')
-        ->where ('msg_senderID', $id);
+        ->where ('msg_recepientID', $id);
 
         # Give the controller all the data as an array
         return $this->db->get ('tbl_messages');

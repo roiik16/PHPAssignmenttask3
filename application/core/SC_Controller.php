@@ -11,9 +11,7 @@ class SC_Controller extends CI_Controller {
         parent::__construct ();
 
         $this->check_login ();
-
     }
-
     # Builds a standard page
     # This function should only be available to this
     # class and its children

@@ -27,6 +27,14 @@
                 <?=form_input ($form['email']); ?>
             </div>
 
+            <div class="input-pair">
+                <label>Profile picture</label>
+                <!--<?=form_open_multipart($form['profilepicture']);?> -->
+                <input type="file" name="userfile" size="20" />
+            </div>
+
+
+
           <?=form_submit (null, 'Register');?>
       </div>
 </div>

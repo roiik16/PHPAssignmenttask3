@@ -11,7 +11,7 @@
     </header>
 
 
-    <?php foreach ($notes->result_array () as $note): ?>
+    <?php foreach($notes->result_array() as $note) : ?>
         <a href="<?=site_url("notes/view_note/{$note['note_content']}")?>"><?=$note['note_title']?></a>
         <h3><?=$note['note_content'] ?> </h3>
         <br>

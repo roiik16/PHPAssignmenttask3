@@ -5,7 +5,7 @@
         <div id="sendto">
             <p>Send to</p>
                 <?=form_dropdown('input-recipient', $userlist); ?>
-        </div>
+
         <div id="contact-text-box">
 
             <?=form_open('contact/do_add_messages'); ?>
@@ -14,8 +14,6 @@
                     <br>
             <?=form_submit (null, 'Send');?>
             <?=form_close (); ?>
-            <textarea placeholder="Write your message here..."></textarea>
-            <button id="sendmessage">Send</button>
         </div>
     </div>
     <div id="right-side">
@@ -26,12 +24,9 @@
 
         <?php foreach($messages->result_array() as $post) : ?>
           <h3><?php echo $post['msg_content'];?></h3>
-
         <br/>
-          <br><br><br>
         <?php endforeach; ?>
-
-
+        
     </div>
         <i class="fa fa-reply" aria-hidden="true"></i>
         <i class="fa fa-trash" aria-hidden="true"></i>

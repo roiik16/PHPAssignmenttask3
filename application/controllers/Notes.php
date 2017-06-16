@@ -67,8 +67,8 @@ class Notes extends SC_Controller {
 		}
 
 		$n_title = $this->input->post ('input-notetitle');
-		$n_content = $this->input->post('input-content');
 
+		$n_content = $this->input->post('input-content');
 
 
 		if ($this->notes_model->add_notes ($n_title, $n_content))
