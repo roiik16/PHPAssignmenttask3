@@ -1,15 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Newcalendar extends SC_Controller {
-
-    function __construct ()
-    {
-        # Inherit the parent class' properties
-        parent::__construct ();
-
-        $this->load->model('newcalendar_model');
-    }
+class Newcalendar extends CI_Controller {
 
     function index($year = null, $month = null) {
 
@@ -20,15 +12,19 @@ class Newcalendar extends SC_Controller {
             $month = date ('m');
         }
 
+        $this->load->model('Newcalendar_Model');
 
         if ($day = $this->input->post('day')) {
             $this->Newcalendar_Model->add_calendar_data(
                 "$year-$month-$day",
                 $this->input->post('data')
             );
+
         }
-        $data['calendar'] = $this->newcalendar_model->generate($year, $month);
+        $data['calendar'] = $this->Newcalendar_Model->generate($year, $month);
 
         $this->load->view('newcalendar', $data);
+
+
     }
 }

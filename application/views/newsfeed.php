@@ -2,19 +2,16 @@
     <div id="askaquestionarea">
       <p>Ask a question</p>
           <!-- <form id="questionform" action="newsfeed.php" method="get"> -->
-
               <?=form_open ('newsfeed/do_add_posts'); ?>
               <?=form_input ($form['body']); ?>
 
               <?=form_submit (null, 'Submit');?>
               <?=form_close (); ?>
-
               <!-- <input type="Name" placeholder = "Write your question here" id="input-question" class="flex-space">
               <button type="submit" id="button-post">
               <i class="fa fa-paper-plane" aria-hidden="true"></i>
               </button
         </form> -->
-
       <hr id="question-line">
   </div>
 <!-- END OF ASK QUESTION -->

@@ -40,11 +40,9 @@ class Profile extends SC_Controller {
 		$email = $this->input->post ('input-email');
 		if ($name == '') $name = NULL;
 
-		$phone = $this->input->post ('user_phone');
-		if ($name == '') $name = NULL;
-
 		$this->users_model->update_users($id, $name, $surname, $email, $phone);
 
 		redirect('profile');
 	}
+
 }

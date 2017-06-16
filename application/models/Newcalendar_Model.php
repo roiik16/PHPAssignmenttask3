@@ -3,10 +3,7 @@
 
     class Newcalendar_Model extends CI_Model {
 
-        public function __construct()
-        {
-          $this->load->database();
-        }
+
 
         var $conf;
 
@@ -27,6 +24,7 @@
 
                 }
                 return $cal_data;
+                
         }
 
         function add_calendar_data($date, $data) {

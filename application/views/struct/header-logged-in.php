@@ -6,6 +6,7 @@
     <link rel="icon" href="<?=base_url('images/logo.png')?>">
     <link type="text/css" rel="stylesheet" href="<?=base_url('css/style.css')?>">
     <link type="text/css" rel="stylesheet" href="css/style.css"><script src="https://use.fontawesome.com/ea811db0f0.js"></script>
+
 </head>
     <body id="indexpage">
         <div id="top-menu">
